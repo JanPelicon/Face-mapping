@@ -1,28 +1,25 @@
-Navodila za zagon:
-Projekt vsebuje dve datoteki: 
+**In order for program to work you first need to download:**
+shape_predictor_68_face_landmarks.dat.bz2 (https://github.com/davisking/dlib-models) and extract it.
 
-project_two_camera.py (Preko argumentov moramo podati indeksa na katerih OpenCV najde kamere npr.: python project_two_camera.py 0 700)
-project_one_camera.py (Preko argumentov moramo podati indeksa na katerih OpenCV najde kamero npr.: python project_two_camera.py 0)
+**2 different programs:**
+project_one_camera.py camera1_index
+project_two_camera.py camera1_index camera2_index
 
-Indekse kamer pridobimo, če poženemo skripto get_camera_index.py
+**Obtain camera index-es with:**
+get_camera_index.py 
 
-V kolikor nimate cython-a ne na vašemu sistemu:
+**Requirements:**
+
+pip install -r requirements.txt
+python setup.py build_ext --inplace
+
+**or if that does not work:**
+
+pip install opencv-python
+pip install dlib
+pip install imutils
+pip install keyboard
 pip install cython
-
-Zgraditi moramo Python knjižnico za napisane C funkcionalnosti.
+pip install pipwin
+pipwin install pyaudio
 python setup.py build_ext --inplace
-
-####################
-# CELOTEN POSTOPEK #
-####################
-
-get_camera_index.py (pridobimo X1 in X2)
-python setup.py build_ext --inplace
-
-project_one_camera.py X1
-OR
-project_two_camera.py X1 X2
-
-
-
-
